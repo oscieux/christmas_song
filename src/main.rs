@@ -46,7 +46,6 @@ fn line_counter(filename: &str) -> usize {
 #[test]
 fn my_test() {
     let filename = "src/les_douze_jours_de_noel.txt";
-    line_counter(filename);
     let cnt = line_counter(filename);
     assert_eq!(cnt, 11);
 }
