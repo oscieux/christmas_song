@@ -1,6 +1,6 @@
 # CHRISTMAS SONG
 
-## GOAL
+## Goal
 
 This project is to print the chrismas song "les douzes jours de Noël", enjoying the repetition of the song.
 
