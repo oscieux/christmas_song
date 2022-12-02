@@ -13,7 +13,7 @@ fn song_iteration(mut m: usize, cnt: usize, filename: &str) {
 
     while m < cnt + 1 {
 
-        let file = File::open(filename).unwrap();
+        let file = File::open(filename).expect("opening error");
         let mut reader = BufReader::new(file);
         let reader_ref = &mut reader;
 
@@ -37,14 +37,15 @@ fn song_iteration(mut m: usize, cnt: usize, filename: &str) {
 
 fn line_counter(filename: &str) -> usize {
 
-    let file = File::open(filename).unwrap();
+    // let file = File::open(filename).unwrap();
+    let file = File::open(filename).expect("opening error");
     let reader = BufReader::new(file);
     let cnt  = reader.lines().count();
     cnt
 }
 
 #[test]
-fn my_test() {
+fn line_counter_test() {
     let filename = "src/les_douze_jours_de_noel.txt";
     let cnt = line_counter(filename);
     assert_eq!(cnt, 11);
