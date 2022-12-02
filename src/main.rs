@@ -39,10 +39,6 @@ fn line_counter(filename: &str) -> usize {
 
     let file = File::open(filename).unwrap();
     let reader = BufReader::new(file);
-    let mut cnt  = 0;
-
-    for _ in reader.lines() {
-        cnt = cnt + 1;
-    }
+    let cnt  = reader.lines().count();
     cnt
 }
